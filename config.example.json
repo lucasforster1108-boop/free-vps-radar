@@ -1,0 +1,35 @@
+{
+  "_comment": "示例配置：复制为 config.json 后按目标页面的实际现状调整关键词/字段。各站页面文案随时会变，示例里的关键词不保证与当前页面一致。",
+  "targets": [
+    {
+      "_note": "示例：页面出现 SOLD OUT 视为无货、消失视为有货。Oracle 免费页实际文案请按当前页面核对后修改 keyword。",
+      "keyword": "SOLD OUT",
+      "mode": "keyword_absent",
+      "name": "Oracle Cloud 免费套餐（示例）",
+      "url": "https://www.oracle.com/cloud/free/"
+    },
+    {
+      "_note": "示例：把 url 换成你要盯的页面，keyword 换成该页面无货时显示的原文（如 'Sold out'、'暂无库存'）。",
+      "keyword": "Out of stock",
+      "mode": "keyword_absent",
+      "name": "通用无货关键词示例",
+      "url": "https://example.com/free-vps"
+    },
+    {
+      "_note": "示例：页面出现该关键词（如领取按钮文案）才视为有货。",
+      "keyword": "Claim now",
+      "mode": "keyword_present",
+      "name": "通用有货关键词示例",
+      "url": "https://example.com/free-plan"
+    },
+    {
+      "_note": "示例：接口返回 JSON 时用点路径读字段；op 支持 equals（相等）和 >=（数值大于等于），expect 是期望值。",
+      "expect": 1,
+      "field": "data.available",
+      "mode": "json_field",
+      "name": "JSON 接口库存示例",
+      "op": ">=",
+      "url": "https://example.com/api/stock"
+    }
+  ]
+}
